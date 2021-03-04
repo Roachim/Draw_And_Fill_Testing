@@ -10,21 +10,24 @@ namespace Testing_Area
     [TestClass]
     public class CreationTest
     {
+        //This is to test for whether or not we get to draw a square on the canvas.
         [TestMethod]
         public void IsMade()
         {
             //Arrange
-            string[,] expectedResult = new string[10, 10];
-            for (int x = 0; x < 10; x++)
+            int K = 10;
+
+            string[,] expectedResult = new string[K, K];
+            for (int x = 0; x < K; x++)
             {
 
-                for (int y = 0; y < 10; y++)
+                for (int y = 0; y < K; y++)
                 {
-                    if (x==0 || x== 9)
+                    if (x==0 || x== K-1)
                     {
                         expectedResult[x, y] = "B";
                     }
-                    else if (y == 0 || y==9)
+                    else if (y == 0 || y==K-1)
                     {
                         expectedResult[x, y] = "B";
                     }
@@ -35,7 +38,7 @@ namespace Testing_Area
                 }
             }
             
-            Canvas P = new Canvas(10);
+            Canvas P = new Canvas(K);
 
             //Act
             P.Draw();
