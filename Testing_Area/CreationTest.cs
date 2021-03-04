@@ -39,11 +39,13 @@ namespace Testing_Area
 
             //Act
             P.Draw();
+            bool actualResult = expectedResult.Cast<string>().SequenceEqual(P.Drawing.Cast<string>());
 
             //Assert
             //Assert.AreEqual(expectedResult, P.Drawing);
             //Assert.IsTrue(Enumerable.SequenceEqual<string[,]>(expectedResult.Cast<string[,]>(), P.Drawing.Cast<string[,]>()));
-                            
+
+            Assert.AreEqual(true, actualResult);
                 
         }
     }
